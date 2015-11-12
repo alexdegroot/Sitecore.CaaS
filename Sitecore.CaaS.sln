@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24627.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.CaaS.WriteSide", "Sitecore.CaaS.WriteSide\Sitecore.CaaS.WriteSide.csproj", "{C5D431F1-7D9B-4FAC-AE51-E731D6CEB30E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.CaaS.Integration", "Sitecore.CaaS.Integration\Sitecore.CaaS.Integration.csproj", "{119448F3-CDBF-48F4-8C38-92692A4B5308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.CaaS.FunSuite", "Sitecore.CaaS.FunSuite\Sitecore.CaaS.FunSuite.csproj", "{A12CEB55-807F-4705-AA5A-CC2E95D7241A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.CaaS.ReadSide", "Sitecore.CaaS.ReadSide\Sitecore.CaaS.ReadSide.csproj", "{F6140B1A-CAF4-4157-BE7C-E91F28FCBEBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Caas.AggregateSide", "Sitecore.Caas.AggregateSide\Sitecore.Caas.AggregateSide.csproj", "{319EE75F-1C54-4A1F-89DA-47C16AD7DB9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5D431F1-7D9B-4FAC-AE51-E731D6CEB30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D431F1-7D9B-4FAC-AE51-E731D6CEB30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D431F1-7D9B-4FAC-AE51-E731D6CEB30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D431F1-7D9B-4FAC-AE51-E731D6CEB30E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119448F3-CDBF-48F4-8C38-92692A4B5308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119448F3-CDBF-48F4-8C38-92692A4B5308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119448F3-CDBF-48F4-8C38-92692A4B5308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119448F3-CDBF-48F4-8C38-92692A4B5308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12CEB55-807F-4705-AA5A-CC2E95D7241A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12CEB55-807F-4705-AA5A-CC2E95D7241A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12CEB55-807F-4705-AA5A-CC2E95D7241A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12CEB55-807F-4705-AA5A-CC2E95D7241A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6140B1A-CAF4-4157-BE7C-E91F28FCBEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6140B1A-CAF4-4157-BE7C-E91F28FCBEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6140B1A-CAF4-4157-BE7C-E91F28FCBEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6140B1A-CAF4-4157-BE7C-E91F28FCBEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{319EE75F-1C54-4A1F-89DA-47C16AD7DB9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319EE75F-1C54-4A1F-89DA-47C16AD7DB9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319EE75F-1C54-4A1F-89DA-47C16AD7DB9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319EE75F-1C54-4A1F-89DA-47C16AD7DB9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
