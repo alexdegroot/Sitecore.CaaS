@@ -1,26 +1,26 @@
 ﻿using System.Threading.Tasks;
 using Sitecore.CaaS.WriteSide.Commands;
-using Sitecore.CaaS.WriteSide.EventPersistance;
+using Sitecore.CaaS.WriteSide.Eventing;
 
 namespace Sitecore.CaaS.WriteSide.Services
 {
     public class ItemService
     {
-        private readonly IEventStore _eventStore;
+        private readonly IEventHandler _eventHandler;
 
-        public ItemService(IEventStore eventStore)
+        public ItemService(IEventHandler eventHandler)
         {
-            _eventStore = eventStore;
+            _eventHandler = eventHandler;
         }
 
         public bool Execute(ICommandAsync cmd)
         {
-            return cmd.ExecuteAsync(_eventStore).Result;
+            return cmd.ExecuteAsync(_eventHandler).Result;
         }
 
-        public async Task<bool> ExecuteAsync(ICommandAsync cmd)
+        protected async Task<bool> ExecuteAsync(ICommandAsync cmd)
         {
-            return await cmd.ExecuteAsync(_eventStore);
+            return await cmd.ExecuteAsync(_eventHandler);
         }
     }
 }

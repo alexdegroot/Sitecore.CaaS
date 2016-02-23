@@ -1,13 +1,13 @@
 ﻿using System.Threading.Tasks;
-using Sitecore.CaaS.WriteSide.EventPersistance;
+using Sitecore.CaaS.WriteSide.Eventing;
 
 namespace Sitecore.CaaS.WriteSide.Commands
 {
     public abstract class CommandBase : ICommandAsync
     {
-        public async Task<bool> ExecuteAsync(IEventStore eventStore)
+        public async Task<bool> ExecuteAsync(IEventHandler eventHandler)
         {
-            return await eventStore.StoreEvent(GetType().Name, this);
+            return await eventHandler.HandleEvent(GetType().Name, this);
         }
     }
 }

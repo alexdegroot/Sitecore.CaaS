@@ -1,28 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using Sitecore.CaaS.WriteSide.Commands;
-using Sitecore.CaaS.WriteSide.EventPersistance;
+using Sitecore.CaaS.WriteSide.Eventing.Persistance;
+using Sitecore.CaaS.WriteSide.Eventing.Queue;
 using Sitecore.CaaS.WriteSide.Services;
+using EventHandler = Sitecore.CaaS.WriteSide.Eventing.EventHandler;
 
 namespace Sitecore.CaaS.FunSuite
 {
     static class Program
     {
-        public static IEventStore eventStore = new MemoryEventStore();
-
         static void Main()
         {
-            eventStore.Events.DidEnqueue += Events_DidEnqueue;
+            var eventQueue = new InMemoryEventQueue();
+            var eventStore = new InMemoryEventStore();
+
+            var eventHandler = new EventHandler(eventQueue, eventStore);
 
             // Write side
-            var service = new ItemService(eventStore);
+            var service = new ItemService(eventHandler);
 
             var itemId = Guid.NewGuid();
             var properties = new Dictionary<string, object>
             {
                 {"name", "somename"},
                 {"creator", "adg"},
-                {"creationTime", DateTime.Now.ToUniversalTime()}  //JSON serialization should take care of this
+                {"creationTime", DateTime.Now.ToUniversalTime()}
             };
             var dimension = new Dictionary<string, string>
             {
@@ -48,14 +51,6 @@ namespace Sitecore.CaaS.FunSuite
 
             // Wait 500ms
             // Read item from tempStore
-        }
-
-        private static void Events_DidEnqueue(object sender, DidEnqueueEventArgs<Tuple<string, string>> e)
-        {
-            Console.WriteLine("Let's aggregate!");
-            Console.WriteLine("Events on the queue: "+  eventStore.Events.Count);
-
-            //TODO: Create aggregated item and move into tempStore
         }
     }
 }
